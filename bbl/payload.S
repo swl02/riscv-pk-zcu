@@ -8,8 +8,9 @@ _payload_start:
   .incbin BBL_PAYLOAD
 _payload_end:
 
-#TUO define our device tree
+#TUO define our device tree here. 
+#TODO move it back to bootrom.
 .globl _bbl_dtb
 _bbl_dtb:
-#.incbin "/home/lituo/workspace/riscv/riscv-zcu102/fpga-zynq/rocket-chip/bootrom/spike.dtb"
-.incbin "/home/lituo/workspace/riscv/riscv-zcu102/fpga-zynq/rocket-chip/bootrom/qemu.dtb"
+#.incbin "../../../bootrom/spike.dtb"
+.incbin "../../../bootrom/qemu.dtb"
