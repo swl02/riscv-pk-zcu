@@ -12,5 +12,6 @@ _payload_end:
 #TODO move it back to bootrom.
 .globl _bbl_dtb
 _bbl_dtb:
+#.incbin "../../../bootrom/rocket.dtb"
 #.incbin "../../../bootrom/spike.dtb"
-.incbin "../../../bootrom/qemu.dtb"
+#.incbin "../../../bootrom/qemu.dtb"

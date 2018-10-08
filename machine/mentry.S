@@ -258,7 +258,7 @@ do_reset:
   add sp, sp, a2
 
   # TUO: load our device tree
-  la a1, _bbl_dtb
+  //la a1, _bbl_dtb
 
   # Boot on the first unmasked hart
   la a4, disabled_hart_mask
