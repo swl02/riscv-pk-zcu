@@ -22,6 +22,7 @@ long frontend_syscall(long n, uint64_t a0, uint64_t a1, uint64_t a2, uint64_t a3
   magic_mem[5] = a4;
   magic_mem[6] = a5;
   magic_mem[7] = a6;
+//TODO should we add hardware memory barrier here "__sync_synchronize();".
 
   htif_syscall((uintptr_t)magic_mem);
 

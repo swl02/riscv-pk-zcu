@@ -20,11 +20,12 @@ void __attribute__((noreturn)) bad_trap(uintptr_t* regs, uintptr_t dummy, uintpt
 
 static uintptr_t mcall_console_putchar(uint8_t ch)
 {
-  if (uart) {
+  /*if (uart) {
     uart_putchar(ch);
   } else if (htif) {
     htif_console_putchar(ch);
-  }
+  }*/
+  htif_console_putchar(ch);
   return 0;
 }
 
@@ -32,7 +33,7 @@ void poweroff(uint16_t code)
 {
   printm("Power off\n");
   finisher_exit(code);
-  if (htif) {
+  if (1) {
     htif_poweroff();
   } else {
     while (1);
@@ -71,6 +72,7 @@ static void send_ipi(uintptr_t recipient, int event)
 
 static uintptr_t mcall_console_getchar()
 {
+/*
   if (uart) {
     return uart_getchar();
   } else if (htif) {
@@ -78,6 +80,8 @@ static uintptr_t mcall_console_getchar()
   } else {
     return '\0';
   }
+*/
+    return htif_console_getchar();
 }
 
 static uintptr_t mcall_clear_ipi()
